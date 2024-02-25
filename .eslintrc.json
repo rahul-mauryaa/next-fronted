@@ -1,0 +1,5 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/apollo/types/**/*.ts"],
+  "extends": "next/core-web-vitals"
+}
