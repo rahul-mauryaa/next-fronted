@@ -15,7 +15,7 @@ const nextConfig = {
       },
       {
   	  protocol: 'https',
-		hostname: 'drive.google.com',
+		hostname: 'strapi-backend-afks.onrender.com',
 		port: '',
 		pathname: '/**',
   	 },
