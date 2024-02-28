@@ -19,6 +19,12 @@ const nextConfig = {
 		port: '',
 		pathname: '/**',
   	 },
+	    {
+  	  protocol: 'https',
+		hostname: 'enduring-bloom-b572fb4b11.strapiapp.com',
+		port: '',
+		pathname: '/**',
+  	 },
       {
         protocol: "http",
         hostname: "localhost",
