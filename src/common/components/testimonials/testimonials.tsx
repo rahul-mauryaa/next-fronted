@@ -83,14 +83,14 @@ const Testimonials = ({ data, sliderName, title }: HeaderProps) => {
           {data &&
             data?.testimonialsitems?.map((testimonials, key) => (
               <div
-                className="card_wrapper rounded-2xl lg:border-gray-500 bg-[#E7E7E7] flex flex-col justify-between leading-normal lg:p-12 p-8 h-full gap-2.5"
+                className="card_wrapper rounded-[30px] lg:border-gray-500 bg-[#E7E7E7] flex flex-col justify-between leading-normal py-12 px-7 h-full gap-2.5 text-left whitespace-normal"
                 key={key}
               >
                 <div className="mb-8 card_info">
                   <h3 className="text-[#0b0b0b] font-medium text-2xl lg:text-3xl mb-3 line">
                     {testimonials?.title}
                   </h3>
-                  <p className="text-[#3a3a3a] text-base leading-7">
+                  <p className="text-[#3a3a3a] text-base leading-7 block my-4 mx-0">
                     {testimonials?.description}
                   </p>
                 </div>

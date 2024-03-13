@@ -8,7 +8,6 @@ import Slider from "react-slick";
 
 interface HeaderProps {
   data: ComponentCardsTestimonialsSection1;
-
   title: any;
 }
 
@@ -44,7 +43,7 @@ const Servicestestimonials = ({ data, title }: HeaderProps) => {
   }
   var settings: any = {
     dots: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 3,
     swipeToSlide: 1,
     speed: 500,
@@ -67,9 +66,11 @@ const Servicestestimonials = ({ data, title }: HeaderProps) => {
     ],
   };
   return (
-    <section className={`slider_section pt-12 pb-20 bg-[#FFFFFF]`}>
-      <div className="relative">
-        <div className="lg:ps-16 ps-5 sm:pe-40 md:pe-72 pe-24 pb-8 w-full md:pt-10 pt-0 max-w-[1180px] ">
+    <section
+      className={`slider_section overflow-hidden pt-12 pb-20 bg-[#FFFFFF]`}
+    >
+      <div className="relative container ml-auto mr-0">
+        <div className=" ps-5 sm:pe-40 md:pe-72 pe-24 pb-8 w-full md:pt-10 pt-0 max-w-[1180px] ">
           <h2 className="font-normal text-[#0b0b0b] xl:text-4xl md:text-3xl text-2xl text-left">
             {title}
           </h2>
@@ -78,7 +79,7 @@ const Servicestestimonials = ({ data, title }: HeaderProps) => {
           {data &&
             data?.testimonialsitems?.map((testimonials, key) => (
               <div
-                className="card_wrapper rounded-2xl lg:border-gray-500 bg-[#E7E7E7] flex flex-col justify-between leading-normal lg:p-12 p-8 h-full gap-2.5"
+                className="card_wrapper rounded-[30px] lg:border-gray-500 bg-[#E7E7E7] flex flex-col justify-between leading-normal py-12 px-7 h-full gap-2.5 text-left whitespace-normal"
                 key={key}
               >
                 <div className="flex items-center gap-4 card_icon">
@@ -100,7 +101,7 @@ const Servicestestimonials = ({ data, title }: HeaderProps) => {
                   <h3 className="text-[#0b0b0b] font-medium text-2xl lg:text-3xl mb-3 line">
                     {testimonials?.title}
                   </h3>
-                  <p className="text-[#3a3a3a] text-base leading-7">
+                  <p className="text-[#3a3a3a] text-base leading-7 block my-4 mx-0">
                     {testimonials?.description}
                   </p>
                 </div>

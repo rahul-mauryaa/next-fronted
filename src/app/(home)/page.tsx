@@ -8,12 +8,10 @@ import {
 } from "@/apollo/types/gql/graphql";
 import { getClient } from "@/lib/client";
 import Bloglist from "@/common/components/blog/bloglist";
-
 import TopHeader from "@/common/components/topheader/topheader";
-
 import Testimonials from "../../common/components/testimonials/testimonials";
-// export const revalidate = 59;
-export const dynamic = "force-dynamic";
+export const revalidate = 10;
+
 export default async function Home() {
   const {
     data: { pages },

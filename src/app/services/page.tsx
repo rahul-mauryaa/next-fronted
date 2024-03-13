@@ -4,14 +4,11 @@ import {
   ServicesPageQueryVariables,
 } from "@/apollo/types/gql/graphql";
 import { getClient } from "@/lib/client";
-
 import TopHeader from "@/common/components/topheader/topheader";
-
 import Footer from "../../common/components/footer/Footer";
 import Servicestestimonials from "@/common/components/testimonials/servicestestimonials";
+export const revalidate = 10;
 
-// export const revalidate = 59;
-export const dynamic = "force-dynamic";
 export default async function Service() {
   const {
     data: { pages },

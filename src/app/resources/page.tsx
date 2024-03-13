@@ -3,12 +3,12 @@ import {
   ResourcesPageQueryVariables,
 } from "@/apollo/types/gql/graphql";
 import { getClient } from "@/lib/client";
-
 import TopHeader from "@/common/components/topheader/topheader";
 import Footer from "../../common/components/footer/Footer";
 import { FILTER_PAGE_QUERY } from "@/apollo/queries/resources";
 import ResourcesComponent from "../../common/components/resources/ResourcesComponent";
-export const revalidate = 59;
+export const revalidate = 10;
+
 export default async function Resources() {
   const {
     data: { pages },

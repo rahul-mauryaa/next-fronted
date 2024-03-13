@@ -93,7 +93,8 @@ export default function Navbar({ headerToggle }: any) {
         </ul>
         <div className="xl:flex items-center justify-center gap-4  hidden ">
           <Link
-            href={`${"#"}/auth/register`}
+            href={process.env.NEXT_PUBLIC_CUSTOMER_LOGIN || "#"}
+            target={process.env.NEXT_PUBLIC_CUSTOMER_LOGIN ? "_blank" : ""}
             className="text-lg text-white rounded-full text-ds-primary bg-transparent border-2 border-white py-2 px-7  flex items-center justify-center gap-3"
           >
             Customer Login

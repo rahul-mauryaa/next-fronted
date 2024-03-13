@@ -13,7 +13,8 @@ import Header from "../../common/components/header/Header";
 import Companynumber from "@/common/components/companynumber/companynumber";
 import Companystory from "@/common/components/companystory/companystory";
 import Overservices from "@/common/components/overservices/ouverservices";
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
+export const revalidate = 10;
 async function Library() {
   const {
     data: { pages },
