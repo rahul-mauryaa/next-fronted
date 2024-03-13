@@ -1,6 +1,6 @@
 import React from "react";
 
-import Hero from "./_components/hero/Hero";
+import Hero from "@/common/components/header/Hero";
 
 import { ComponentCardsHeroSection } from "@/apollo/types/gql/graphql";
 
@@ -10,9 +10,11 @@ interface HeaderProps {
 
 function Header({ data }: HeaderProps) {
   return (
-    <div className=" bg-gradient-to-b from-[#22d3ee] to-[#00C8FB]  text-white  xl:text-lg">
-      <Hero data={data} />
-    </div>
+    <>
+      <div className=" bg-[#1D1D1D]  text-white  xl:text-lg">
+        <Hero data={data} />
+      </div>
+    </>
   );
 }
 

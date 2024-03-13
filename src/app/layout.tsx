@@ -4,7 +4,7 @@ import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ApolloWrapper } from "@/lib/apollo-wrapper";
-import { ThemeProvider } from "@/common/components/materialTailwind/materialtailwind";
+
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Xinthesys",
@@ -25,9 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider>
-          <ApolloWrapper>{children}</ApolloWrapper>
-        </ThemeProvider>
+        <ApolloWrapper>{children}</ApolloWrapper>
       </body>
     </html>
   );

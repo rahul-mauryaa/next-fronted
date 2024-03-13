@@ -1,7 +1,7 @@
 "use client";
 import { ComponentCardsTechnologySection } from "@/apollo/types/gql/graphql";
-import { replaceWithSupTM } from "@/app/(home)/_components/header/_components/hero/Hero";
-import { getStrapiMediaURL } from "@/utils/helper";
+
+import { getStrapiMediaURL, replaceWithSupTM } from "@/utils/helper";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -39,7 +39,7 @@ const TechnologyComponent = ({ data }: HeaderProps) => {
   }, [sectionData]);
   return (
     <div>
-      <section className="adept_work_section bg-[#2B2B2B] pb-14 pt-28 lg:pb-20 px-5 xl:px-10 border-b-2 border-b-[#616161]">
+      <section className="adept_work_section bg-[#0B0B0B] pb-14 pt-28 lg:pb-20 px-5 xl:px-10 border-b-2 border-b-[#616161]">
         <div className="w-full mx-auto max-width">
           <div className="flex flex-col lg:flex-row items-center gap-6 justify-between pb-8">
             <div className="flex-shrink-0 w-full lg:w-1/4">

@@ -1,22 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 
 import { ComponentCardsHeroSection } from "@/apollo/types/gql/graphql";
-import ForwardArrow from "@/common/assets/icons/forward-arrow.svg";
-import { getStrapiMediaURL } from "@/utils/helper";
+
+import { getStrapiMediaURL, replaceWithSupTM } from "@/utils/helper";
 import { Carousel } from "@material-tailwind/react";
 
 interface HeaderProps {
   data?: ComponentCardsHeroSection;
 }
-
-export const replaceWithSupTM = (text: any, searchString: any) => {
-  const regex = new RegExp(searchString + "TM", "g");
-  const modifiedText = text.replace(regex, `${searchString}<sup>TM</sup>`);
-  return modifiedText;
-};
 
 function Hero({ data }: HeaderProps) {
   const { sliderItems } = data || {};
@@ -41,12 +35,12 @@ function Hero({ data }: HeaderProps) {
                 <div className="relative w-full h-full" key={index}>
                   {bgImageSrc && (
                     <Image
+                      fill
                       src={getStrapiMediaURL(bgImageSrc)!}
-                      width={900}
-                      height={900}
+                      sizes="100vw"
+                      object-fit="cover"
                       quality={100}
                       alt="Hero Image"
-                      className="w-full h-full object-cover"
                     />
                   )}
 

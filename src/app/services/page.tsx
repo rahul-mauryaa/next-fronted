@@ -1,37 +1,26 @@
-import { FILTER_PAGE_QUERY } from "@/apollo/queries/home";
+import { FILTER_PAGE_QUERY } from "@/apollo/queries/services";
 import {
   ServicesPageQuery,
   ServicesPageQueryVariables,
-  HeaderpageQuery,
 } from "@/apollo/types/gql/graphql";
 import { getClient } from "@/lib/client";
 
 import TopHeader from "@/common/components/topheader/topheader";
 
-import Footer from "../(home)/_components/footer/Footer";
+import Footer from "../../common/components/footer/Footer";
+import Servicestestimonials from "@/common/components/testimonials/servicestestimonials";
 
-import { HEADER_QUERY } from "@/apollo/queries/header";
-import Testimonials from "@/app/(home)/_components/testimonials/testimonials";
+// export const revalidate = 59;
 export const dynamic = "force-dynamic";
 export default async function Service() {
   const {
     data: { pages },
-    loading,
-    error,
   } = await getClient().query<ServicesPageQuery, ServicesPageQueryVariables>({
     query: FILTER_PAGE_QUERY,
     variables: {
       slug: "services",
     },
   });
-
-  const { data: header } = await getClient().query<HeaderpageQuery>({
-    query: HEADER_QUERY,
-  });
-
-  if (loading) return <span>Loading...</span>;
-
-  if (error) return <span>{error?.message}</span>;
 
   const response = pages?.data[0];
   const contents = response?.attributes?.contentSection;
@@ -42,17 +31,13 @@ export default async function Service() {
     index: unknown | any
   ) {
     const componentReturnType: { [name: string]: JSX.Element } = {
-      ComponentCardsTestimonialsSection: (
-        <Testimonials data={content} key={index} />
+      ComponentCardsTestimonialsSection1: (
+        <Servicestestimonials
+          data={content}
+          title={"You’re in good company"}
+          key={index}
+        />
       ),
-    };
-
-    return name ? componentReturnType[name] : null;
-  }
-
-  function getPageHeaderData(name: string | undefined, content: unknown | any) {
-    const componentReturnType: { [name: string]: JSX.Element } = {
-      HeaderSection: <TopHeader headerdata={content} />,
     };
 
     return name ? componentReturnType[name] : null;
@@ -60,18 +45,12 @@ export default async function Service() {
 
   return (
     <main className="mx-auto text-[16px] scroll-smooth font-bariolRegular xl:text-lg">
-      {header &&
-        // eslint-disable-next-line no-underscore-dangle
-        getPageHeaderData(
-          header?.headerSection?.data?.attributes?.__typename,
-          header?.headerSection?.data?.attributes
-        )}
+      <TopHeader />
       {contents &&
         contents.map((content, index) => {
           // eslint-disable-next-line no-underscore-dangle
           return getPageSectionData(content?.__typename, content, index);
         })}
-
       <Footer />
     </main>
   );

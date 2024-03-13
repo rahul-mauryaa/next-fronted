@@ -14,18 +14,6 @@ const nextConfig = {
         hostname: "dev-strapi.xinthesys.com", // if your website has no www, drop it
       },
       {
-  	  protocol: 'https',
-		hostname: 'strapi-backend-afks.onrender.com',
-		port: '',
-		pathname: '/**',
-  	 },
-	    {
-  	  protocol: 'https',
-		hostname: 'enduring-bloom-b572fb4b11.strapiapp.com',
-		port: '',
-		pathname: '/**',
-  	 },
-      {
         protocol: "http",
         hostname: "localhost",
       },

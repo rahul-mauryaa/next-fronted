@@ -31,6 +31,22 @@ export const FILTER_PAGE_QUERY = gql`
             }
             ... on ComponentCardsTabSection {
               id
+              Head {
+                title
+                description
+                commonimagetoggle
+                commonImage {
+                  data {
+                    attributes {
+                      name
+                      url
+                      formats
+                      createdAt
+                      updatedAt
+                    }
+                  }
+                }
+              }
               tabsItems {
                 ...TabsItems
               }

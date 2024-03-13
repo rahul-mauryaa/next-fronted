@@ -6,7 +6,7 @@ import { TABS_ITEMS_FRAGMENT } from "@/apollo/fragments/tabs-items";
 import { TESTIMONIALS_ITEMS_FRAGMENT } from "@/apollo/fragments/tesimonials-items";
 
 export const FILTER_PAGE_QUERY = gql`
-  query homePage($slug: String) {
+  query libraryPage($slug: String) {
     pages(filters: { slug: { eq: $slug } }) {
       data {
         attributes {
@@ -49,6 +49,57 @@ export const FILTER_PAGE_QUERY = gql`
               id
               testimonialsitems {
                 ...TestimonialsItems
+              }
+            }
+            ... on ComponentCardsCompanyNumberSection {
+              title
+              description
+              btn_text1
+              btn_url1
+              companyNumber {
+                title
+                highlightedTitleText
+                description
+              }
+            }
+            ... on ComponentCardsOverServicesSection {
+              title
+              description
+              btn_text1
+              btn_url1
+              testimonialsitems {
+                title
+                description
+                image {
+                  data {
+                    attributes {
+                      name
+                      url
+                      formats
+                      createdAt
+                      updatedAt
+                    }
+                  }
+                }
+              }
+            }
+            ... on ComponentCardsCompanyStorySection {
+              title
+              description
+              btn_text1
+              btn_text2
+              btn_url1
+              btn_url2
+              image {
+                data {
+                  attributes {
+                    name
+                    url
+                    formats
+                    createdAt
+                    updatedAt
+                  }
+                }
               }
             }
           }

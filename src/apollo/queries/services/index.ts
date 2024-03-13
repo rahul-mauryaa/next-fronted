@@ -1,6 +1,4 @@
 import { gql } from "@apollo/client";
-import { TABS_ITEMS_FRAGMENT } from "@/apollo/fragments/tabs-items";
-import { TESTIMONIALS_ITEMS_FRAGMENT } from "@/apollo/fragments/tesimonials-items";
 
 export const FILTER_PAGE_QUERY = gql`
   query servicesPage($slug: String) {
@@ -14,10 +12,22 @@ export const FILTER_PAGE_QUERY = gql`
           publishedAt
           contentSection {
             __typename
-            ... on ComponentCardsTestimonialsSection {
+            ... on ComponentCardsTestimonialsSection1 {
               id
               testimonialsitems {
-                ...TestimonialsItems
+                title
+                description
+                image {
+                  data {
+                    attributes {
+                      name
+                      url
+                      formats
+                      createdAt
+                      updatedAt
+                    }
+                  }
+                }
               }
             }
           }
@@ -25,7 +35,4 @@ export const FILTER_PAGE_QUERY = gql`
       }
     }
   }
-
-  ${TABS_ITEMS_FRAGMENT}
-  ${TESTIMONIALS_ITEMS_FRAGMENT}
 `;

@@ -33,7 +33,7 @@ export default function ResourcesComponent({ data }: HeaderProps) {
       <section className="bg-gray-100 pt-12 pb-10 px-4">
         <div className="grid grid-cols-3 sm:gap-6 gap-0 lg:16 w-full max-width mx-auto sm:pt-20 pt-16 ">
           <article className="relative w-full sm:col-span-2 col-span-3">
-            <h1 className="text-2xl lg:text-4xl sm:text-3xl sm:pb-10 pb-5 text-[#00C8FB] sm:max-w-2xl max-w-full width-full">
+            <h1 className="text-2xl lg:text-4xl sm:text-3xl sm:pb-10 pb-5 text-black sm:max-w-2xl max-w-full width-full">
               {data?.mainTitle}
             </h1>
             {data?.groupNames &&
@@ -51,7 +51,7 @@ export default function ResourcesComponent({ data }: HeaderProps) {
                         <div key={i}>
                           <Link
                             href="#"
-                            className="mb-2 block text-base font-medium text-[#00C8FB]"
+                            className="mb-2 block text-base font-medium text-[#454545]"
                           >
                             {resItems?.attributes?.title}
                           </Link>
@@ -88,7 +88,7 @@ export default function ResourcesComponent({ data }: HeaderProps) {
                                         ?.attributes?.url as any
                                     )!
                                   }
-                                  className="py-2 px-4 bg-[#00C8FB] text-white rounded-3xl border border-transparent font-medium hover:border-[#00C8FB] hover:bg-transparent hover:text-[#00C8FB]"
+                                  className="py-2 px-4 bg-[#0B0B0B] text-white rounded-3xl border border-transparent font-medium hover:border-[#0B0B0B] hover:bg-transparent hover:text-[#0B0B0B]"
                                 >
                                   Download
                                 </button>
@@ -100,7 +100,7 @@ export default function ResourcesComponent({ data }: HeaderProps) {
                                   href={
                                     resItems?.attributes?.readMoreLink as any
                                   }
-                                  className="bg-transparent py-2 px-4 text-[#00C8FB] font-medium border border-[#00C8FB] rounded-3xl hover:border-transparent hover:bg-[#00C8FB] hover:text-white"
+                                  className="bg-transparent py-2 px-4 text-[#0B0B0B] font-medium border border-[#0B0B0B] rounded-3xl hover:border-transparent hover:bg-[#0B0B0B] hover:text-white"
                                 >
                                   Read More
                                 </Link>
@@ -113,7 +113,7 @@ export default function ResourcesComponent({ data }: HeaderProps) {
               ))}
           </article>
           <div className="sm:col-span-1 col-span-3">
-            <h4 className="text-lg pb-5 text-[#00C8FB] sm:max-w-2xl max-w-full width-full">
+            <h4 className="text-lg pb-5 text-black sm:max-w-2xl max-w-full width-full">
               IMPORTANT DATES
             </h4>
             {data?.resourcesDateItems &&

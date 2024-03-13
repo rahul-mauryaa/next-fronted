@@ -14,21 +14,14 @@ async function Footer() {
 
   return (
     <>
-      <footer className="bg-[#2B2B2B] py-10 lg:py-16 px-5 xl:px-10">
+      <footer className="bg-black py-10 sm:py-32 px-5 sm:px-10 sm:rounded-t-[120px] rounded-t-3xl ">
         <div className="w-full mx-auto max-width">
           <div className="flex flex-col justify-center items-center">
-            <div className="flex w-full justify-between gap-8 flex-wrap lg:flex-nowrap">
+            <div className="flex w-full justify-between gap-10 flex-wrap lg:flex-nowrap">
               <div className="logo_wrapper max-w-lg w-full">
-                <Link
-                  href="#hero"
-                  className="max-w-[200px] h-[38px] lg:w-[auto] w-3/6"
-                >
-                  <Image
-                    src="/logo.png"
-                    alt="Xinthesys_Logo"
-                    width={200}
-                    height={200}
-                  />
+                <Link href="#hero" className="xl:pl-0 pl-5 flex gap-2">
+                  <Image src="/logo.svg" alt="logo" width={30} height={30} />
+                  <span className="text-white text-3xl">Xinthesys</span>
                 </Link>
                 <div className="border-l border-white pl-10 mt-8">
                   <p className="text-white pb-5 text-sm">
@@ -57,44 +50,29 @@ async function Footer() {
                   </div>
                 </div>
               </div>
-              <ul className="flex flex-col gap-2 lg:w-[auto] w-3/6">
+              <ul className="flex flex-col gap-2 lg:w-[auto] w-3/6 *:text-white *:text-lg ">
                 <li>
-                  <Link
-                    href=""
-                    className="text-white text-lg hover:text-[#00C8FB]"
-                  >
+                  <Link href="" className="hover:text-[#00C8FB]">
                     Why Xinthesys
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/"
-                    className="text-white text-lg hover:text-[#00C8FB]"
-                  >
+                  <Link href="/" className="hover:text-[#00C8FB]">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/services"
-                    className="text-white text-lg hover:text-[#00C8FB]"
-                  >
+                  <Link href="/services" className="hover:text-[#00C8FB]">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/technology"
-                    className="text-white text-lg hover:text-[#00C8FB]"
-                  >
+                  <Link href="/technology" className="hover:text-[#00C8FB]">
                     Technology
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/resources"
-                    className="text-white text-lg hover:text-[#00C8FB]"
-                  >
+                  <Link href="/resources" className="hover:text-[#00C8FB]">
                     Resources
                   </Link>
                 </li>

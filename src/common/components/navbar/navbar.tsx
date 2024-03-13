@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import ForwardArrow from "@/common/assets/icons/forward-arrow.svg";
-// import { clientEnv } from "@/helper/env";
 
 export default function Navbar({ headerToggle }: any) {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,21 +30,17 @@ export default function Navbar({ headerToggle }: any) {
         headerToggle ? "sm:top-18 top-18" : "top-0"
       } xl:${
         headerToggle ? "top-16" : "top-0"
-      } py-5 px-0 xl:px-10 z-30 bg-gradient-to-b from-[#0e7490] to-[#00C8FB] border-b-[#D7E3E9]/20 shadow-lg backdrop-blur-2xl`}
+      } py-5 px-0 xl:px-10 z-[60]  bg-[#0B0B0B] border-b-[#D7E3E9]/20 shadow-lg backdrop-blur-2xl`}
     >
       <nav className="flex justify-between items-center w-full m-auto max-width h-10">
-        <Link href="/" className="xl:pl-0 pl-5">
-          <Image
-            src="/logo.png"
-            alt="Xinthesys_Logo"
-            width={200}
-            height={200}
-          />
+        <Link href="/" className="xl:pl-0 pl-5 flex gap-2">
+          <Image src="/logo.svg" alt="logo" width={30} height={30} />
+          <span className="text-white text-3xl">Xinthesys</span>
         </Link>
         <ul
           className={`flex justify-center max-w-lg items-center transition-all duration-500 ease-in-out w-full gap-14 xl:relative top-0 absolute xl:right-0 h-screen  xl:h-full ${
             isOpen
-              ? "flex-col bg-[#00C8FB] xl:hidden"
+              ? "flex-col bg-[#0B0B0B] xl:hidden"
               : "hidden sm:hidden md:hidden lg:hidden xl:flex"
           }`}
         >
@@ -82,14 +77,11 @@ export default function Navbar({ headerToggle }: any) {
 
           <li className={`${isOpen ? "block" : "hidden"} `}>
             <div className="flex flex-col gap-14">
-              <Link href={"#"} className="text-white text-lg">
-                Go to Dashboard
-              </Link>
               <Link
                 href={`${"#"}/auth/register`}
                 className="text-lg text-white rounded-full text-ds-primary bg-transparent border-2 border-white py-2 px-7  flex items-center justify-center gap-3"
               >
-                Log in
+                Customer Login
                 <Image
                   src={ForwardArrow}
                   alt="forward arrow"
@@ -100,14 +92,11 @@ export default function Navbar({ headerToggle }: any) {
           </li>
         </ul>
         <div className="xl:flex items-center justify-center gap-4  hidden ">
-          <Link href={"#"} className="text-white text-lg">
-            Go to Dashboard
-          </Link>
           <Link
             href={`${"#"}/auth/register`}
             className="text-lg text-white rounded-full text-ds-primary bg-transparent border-2 border-white py-2 px-7  flex items-center justify-center gap-3"
           >
-            Log in
+            Customer Login
             <Image
               src={ForwardArrow}
               alt="forward arrow"
