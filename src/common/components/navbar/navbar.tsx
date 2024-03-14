@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { useEffect, useState } from "react";
 
-import ForwardArrow from "@/common/assets/icons/forward-arrow.svg";
+import ForwardArrow from "@/common/assets/icons/forward-arrow-white.svg";
 
 export default function Navbar({ headerToggle }: any) {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,15 +78,12 @@ export default function Navbar({ headerToggle }: any) {
           <li className={`${isOpen ? "block" : "hidden"} `}>
             <div className="flex flex-col gap-14">
               <Link
-                href={`${"#"}/auth/register`}
+                href={process.env.NEXT_PUBLIC_CUSTOMER_LOGIN || "#"}
+                target={process.env.NEXT_PUBLIC_CUSTOMER_LOGIN ? "_blank" : ""}
                 className="text-lg text-white rounded-full text-ds-primary bg-transparent border-2 border-white py-2 px-7  flex items-center justify-center gap-3"
               >
                 Customer Login
-                <Image
-                  src={ForwardArrow}
-                  alt="forward arrow"
-                  className="brightness-300"
-                />
+                <Image src={ForwardArrow} alt="forward arrow" />
               </Link>
             </div>
           </li>
@@ -98,11 +95,7 @@ export default function Navbar({ headerToggle }: any) {
             className="text-lg text-white rounded-full text-ds-primary bg-transparent border-2 border-white py-2 px-7  flex items-center justify-center gap-3"
           >
             Customer Login
-            <Image
-              src={ForwardArrow}
-              alt="forward arrow"
-              className="brightness-300 hover:brightness-50"
-            />
+            <Image src={ForwardArrow} alt="forward arrow" />
           </Link>
         </div>
         {!isOpen && (

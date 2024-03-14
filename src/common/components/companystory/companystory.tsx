@@ -41,14 +41,14 @@ const Companystory = ({ data }: HeaderProps) => {
                 </Link>
                 <Link
                   href={data?.btn_url2 as string}
-                  className=" rounded-lg text-black hover:text-gray-600 text-sm px-7 py-6 leading-3 h-fit  w-full sm:w-auto flex justify-center items-center gap-2 hover:gap-5 transition-all duration-500"
+                  className=" rounded-lg text-black hover:text-gray-600 text-sm px-7 py-6 leading-3 h-fit  w-full sm:w-auto flex justify-center items-center gap-2 hover:gap-4 transition-all duration-500"
                 >
                   {data?.btn_text2}
                   <Image
                     src={"/next_arrow.svg"}
                     alt="Arrow"
-                    width={20}
-                    height={20}
+                    width={13}
+                    height={13}
                   />
                 </Link>
               </div>
