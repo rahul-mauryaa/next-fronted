@@ -1,6 +1,5 @@
 "use client";
 
-import { clientEnv } from "@/helper/env";
 import { ApolloLink, HttpLink } from "@apollo/client";
 import {
   ApolloNextAppProvider,
@@ -9,8 +8,7 @@ import {
   SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support/ssr";
 
-const GRAPHQL_ENDPOINT =
-  clientEnv.NEXT_PUBLIC_GRAPHQL_ENDPOINT || "http://localhost:1337/graphql";
+const GRAPHQL_ENDPOINT = "http://localhost:1337/graphql";
 
 function makeClient() {
   const httpLink = new HttpLink({

@@ -1,12 +1,5 @@
 import { clientEnv } from "@/helper/env";
 
-export const replaceWithSupTM = (text: any, searchString: any) => {
-  if (!text) return null;
-  const regex = new RegExp(searchString + "TM", "g");
-  const modifiedText = text.replace(regex, `${searchString}<sup>TM</sup>`);
-  return modifiedText;
-};
-
 export const getStrapiMediaURL = (url: string) => {
   if (!url) return null;
 
