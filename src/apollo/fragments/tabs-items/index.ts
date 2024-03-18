@@ -15,7 +15,16 @@ export const TABS_ITEMS_FRAGMENT = gql`
             description
           }
           image {
-            ...Image
+            data {
+              id
+              attributes {
+                name
+                formats
+                url
+                createdAt
+                updatedAt
+              }
+            }
           }
           slug
         }

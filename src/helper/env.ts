@@ -20,7 +20,7 @@ const clientEnvSchema = z.object({
     .string()
     .trim()
     .min(1)
-    .default("http://localhost:1337/"),
+    .default("http://localhost:1337"),
 });
 
 export const clientEnv = clientEnvSchema.parse({

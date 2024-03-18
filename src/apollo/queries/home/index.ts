@@ -1,9 +1,10 @@
 import { gql } from "@apollo/client";
 
 import { IMAGE_FRAGMENT } from "@/apollo/fragments/image";
-import { SLIDER_ITEMS_FRAGMENT } from "@/apollo/fragments/section-items";
+import { SECTION_ITEMS_FRAGMENT } from "@/apollo/fragments/section-items";
 import { TABS_ITEMS_FRAGMENT } from "@/apollo/fragments/tabs-items";
-import { BUTTON_ITEMS_FRAGMENT } from "@/apollo/fragments/Button-items";
+import { TESTIMONIALS_ITEMS_FRAGMENT } from "@/apollo/fragments/tesimonials-items";
+
 export const FILTER_PAGE_QUERY = gql`
   query homePage($slug: String) {
     pages(filters: { slug: { eq: $slug } }) {
@@ -19,23 +20,36 @@ export const FILTER_PAGE_QUERY = gql`
             ... on ComponentCardsHeroSection {
               id
               sliderItems {
-                ...SliderItems
+                ...SectionItems
               }
             }
             ... on ComponentCardsTabSection {
               id
+              Head {
+                title
+                description
+                commonimagetoggle
+                commonImage {
+                  data {
+                    attributes {
+                      name
+                      url
+                      formats
+                      createdAt
+                      updatedAt
+                    }
+                  }
+                }
+              }
               tabsItems {
                 ...TabsItems
               }
             }
-            ... on ComponentCardsHeaderSection {
+            ... on ComponentCardsTestimonialsSection {
               id
-              title
-              description
-              offerButton {
-                ...ButtonItems
+              testimonialsitems {
+                ...TestimonialsItems
               }
-              toggle
             }
           }
         }
@@ -43,7 +57,7 @@ export const FILTER_PAGE_QUERY = gql`
     }
   }
   ${IMAGE_FRAGMENT}
-  ${SLIDER_ITEMS_FRAGMENT}
+  ${SECTION_ITEMS_FRAGMENT}
   ${TABS_ITEMS_FRAGMENT}
-  ${BUTTON_ITEMS_FRAGMENT}
+  ${TESTIMONIALS_ITEMS_FRAGMENT}
 `;
