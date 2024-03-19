@@ -15,7 +15,7 @@ export default async function TopHeader() {
     <>
       {headerdata?.toggle && (
         <div
-          className={`bg-[#1D1D1D] px-5 xl:px-10 py-3 flex flex-col lg:flex-row justify-center items-center lg:gap-5 gap-2 offer_wrapper`}
+          className={`bg-[#1D1D1D] px-5 xl:px-10 py-3 flex flex-col xl:flex-row justify-center items-center lg:gap-5 gap-2`}
         >
           <p className="text-white text-sm lg:text-base font-semibold text-center lg:text-left">
             {`${headerdata?.title}:${headerdata?.description}`}

@@ -1,20 +1,19 @@
 import React from "react";
-
 import Bloglist from "@/common/components/blog/bloglist";
-
-import Testimonials from "../../common/components/testimonials/testimonials";
+import Testimonials from "@/common/components/testimonials/testimonials";
 import { getClient } from "@/lib/client";
 import {
   LibraryPageQuery,
   LibraryPageQueryVariables,
 } from "@/apollo/types/gql/graphql";
 import { FILTER_PAGE_QUERY } from "@/apollo/queries/library";
-import Header from "../../common/components/hero/Header";
+import Header from "@/common/components/hero/Header";
 import Companynumber from "@/common/components/companynumber/companynumber";
 import Companystory from "@/common/components/companystory/companystory";
 import Overservices from "@/common/components/overservices/ouverservices";
 // export const dynamic = "force-dynamic";
 export const revalidate = 10;
+
 async function Library() {
   const {
     data: { pages },
@@ -103,7 +102,6 @@ async function Library() {
           // eslint-disable-next-line no-underscore-dangle
           return getPageSectionData(content?.__typename, content, index);
         })}
-      {/* <Companystory /> */}
     </div>
   );
 }

@@ -4,9 +4,9 @@ import {
 } from "@/apollo/types/gql/graphql";
 import { getClient } from "@/lib/client";
 import TopHeader from "@/common/components/topheader/topheader";
-import Footer from "../../common/components/footer/Footer";
+import Footer from "@/common/components/footer/Footer";
 import { FILTER_PAGE_QUERY } from "@/apollo/queries/technology";
-import TechnologyComponent from "../../common/components/technology/TechnologyComponent";
+import TechnologyComponent from "@/common/components/technology/TechnologyComponent";
 import Hero from "@/common/components/hero/Hero";
 import Bloglist from "@/common/components/blog/bloglist";
 export const revalidate = 10;

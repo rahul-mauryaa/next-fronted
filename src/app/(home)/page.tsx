@@ -1,5 +1,5 @@
-import Footer from "../../common/components/footer/Footer";
-import Header from "../../common/components/hero/Header";
+import Footer from "@/common/components/footer/Footer";
+import Header from "@/common/components/hero/Header";
 import { FILTER_PAGE_QUERY } from "@/apollo/queries/home";
 import {
   HomePageQuery,
@@ -8,7 +8,7 @@ import {
 import { getClient } from "@/lib/client";
 import Bloglist from "@/common/components/blog/bloglist";
 import TopHeader from "@/common/components/topheader/topheader";
-import Testimonials from "../../common/components/testimonials/testimonials";
+import Testimonials from "@/common/components/testimonials/testimonials";
 export const revalidate = 10;
 
 export default async function Home() {

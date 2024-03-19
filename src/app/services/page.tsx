@@ -5,7 +5,7 @@ import {
 } from "@/apollo/types/gql/graphql";
 import { getClient } from "@/lib/client";
 import TopHeader from "@/common/components/topheader/topheader";
-import Footer from "../../common/components/footer/Footer";
+import Footer from "@/common/components/footer/Footer";
 import Servicestestimonials from "@/common/components/testimonials/servicestestimonials";
 export const revalidate = 10;
 

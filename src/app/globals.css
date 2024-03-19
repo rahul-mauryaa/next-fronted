@@ -196,12 +196,6 @@
     border-color: transparent  transparent transparent #00C8FB;
   }
   
-  .inactive{
-    left: -150%;
-    -webkit-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-  }
   .sticky_header{
     position: sticky;
     top:0 !important;

@@ -3,7 +3,6 @@ import { ComponentCardsTestimonialsSection } from "@/apollo/types/gql/graphql";
 import { getStrapiMediaURL } from "@/utils/helper";
 import Image from "next/image";
 import React from "react";
-
 import Slider from "react-slick";
 
 interface HeaderProps {

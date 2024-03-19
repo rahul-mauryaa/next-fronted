@@ -32,6 +32,7 @@ async function Footer() {
                       footerData?.socialItems?.map((social: any, i) => (
                         <Link
                           href={social?.link}
+                          target="_blank"
                           className="text-white"
                           key={i}
                         >
@@ -83,7 +84,7 @@ async function Footer() {
                   Xinthesys, LLC 845 Third Avenue 6th Floor New York, NY 10022
                 </p>
                 <Link
-                  href=""
+                  href="#"
                   className="text-white text-xs hover:text-[#00C8FB]"
                 >
                   sales@xinthesys.com
